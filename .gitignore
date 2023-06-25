@@ -1,0 +1,4 @@
+*.zip
+bevy-ball-game/target
+learn-bevy/target
+*.lock
