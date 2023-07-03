@@ -6,7 +6,7 @@ use super:: NUMBER_OF_STARS;
 use super::components::*;
 use super::resources::*;
 
-pub fn spawn_star(
+pub fn spawn_stars(
     mut commands: Commands,
     window_query: Query<&Window, With<PrimaryWindow>>,
     asset_server: Res<AssetServer>
@@ -28,6 +28,12 @@ pub fn spawn_star(
                 Star{},
             )
         );
+    }
+}
+
+pub fn despawn_stars(mut commands: Commands, star_query: Query<Entity, With<Star>>) {
+    for enity_star in star_query.iter() {
+        commands.entity(enity_star).despawn();
     }
 }
 
